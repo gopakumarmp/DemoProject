@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpandableSectionHeaderCellID" id="f3D-ls-YIr" customClass="ExpandableSectionHeaderCell" customModule="Gareware" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f3D-ls-YIr" id="Sa9-W5-Kbe">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expuparrow" translatesAutoresizingMaskIntoConstraints="NO" id="5E7-sc-xkB">
+                        <rect key="frame" x="16" y="7" width="30" height="29.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="4md-GJ-OFU"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x11-F1-8Xj">
+                        <rect key="frame" x="56" y="7" width="306" height="28.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.55414770527808221" green="0.85963221851643845" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="5E7-sc-xkB" firstAttribute="top" secondItem="Sa9-W5-Kbe" secondAttribute="top" constant="7" id="3XO-75-b3L"/>
+                    <constraint firstItem="x11-F1-8Xj" firstAttribute="leading" secondItem="5E7-sc-xkB" secondAttribute="trailing" constant="10" id="Klb-qm-Dda"/>
+                    <constraint firstAttribute="trailing" secondItem="x11-F1-8Xj" secondAttribute="trailing" constant="13" id="Qx6-E2-aJ0"/>
+                    <constraint firstItem="5E7-sc-xkB" firstAttribute="leading" secondItem="Sa9-W5-Kbe" secondAttribute="leading" constant="16" id="TKo-wA-YIu"/>
+                    <constraint firstItem="5E7-sc-xkB" firstAttribute="centerY" secondItem="Sa9-W5-Kbe" secondAttribute="centerY" id="bQn-TR-w7s"/>
+                    <constraint firstItem="x11-F1-8Xj" firstAttribute="top" secondItem="Sa9-W5-Kbe" secondAttribute="top" constant="7" id="qrs-Lr-WBn"/>
+                    <constraint firstAttribute="bottom" secondItem="x11-F1-8Xj" secondAttribute="bottom" constant="8" id="ttT-wP-7Eu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="title" destination="x11-F1-8Xj" id="omX-2e-lck"/>
+            </connections>
+            <point key="canvasLocation" x="0.80000000000000004" y="-1.7991004497751126"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="expuparrow" width="32" height="32"/>
+    </resources>
+</document>

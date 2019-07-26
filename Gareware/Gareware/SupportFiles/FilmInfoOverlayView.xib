@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="DRm-m7-Kjk" customClass="FilmInfoOverlayView" customModule="Gareware" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rtK-LA-zjY">
+                    <rect key="frame" x="205.5" y="0.0" width="168.5" height="402"/>
+                    <color key="backgroundColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RVA-E2-zO2">
+                    <rect key="frame" x="1" y="0.0" width="204.5" height="280"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="DRm-m7-Kjk" id="0GL-0A-1Oi"/>
+                        <outlet property="delegate" destination="DRm-m7-Kjk" id="gdu-Do-Ff2"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="RVA-E2-zO2" firstAttribute="top" secondItem="DRm-m7-Kjk" secondAttribute="top" id="5Q2-0a-Gby"/>
+                <constraint firstItem="rtK-LA-zjY" firstAttribute="bottom" secondItem="rTr-Pp-6eK" secondAttribute="bottom" constant="2" id="CQA-D7-44N"/>
+                <constraint firstItem="RVA-E2-zO2" firstAttribute="top" secondItem="rTr-Pp-6eK" secondAttribute="top" id="Gqa-yG-Csd"/>
+                <constraint firstAttribute="trailing" secondItem="rtK-LA-zjY" secondAttribute="trailing" constant="1" id="WC9-1Q-aQh"/>
+                <constraint firstItem="rtK-LA-zjY" firstAttribute="top" secondItem="DRm-m7-Kjk" secondAttribute="top" id="WXo-bB-kFQ"/>
+                <constraint firstItem="RVA-E2-zO2" firstAttribute="height" secondItem="DRm-m7-Kjk" secondAttribute="height" multiplier="0.7" id="aaY-TY-JyC"/>
+                <constraint firstItem="rtK-LA-zjY" firstAttribute="leading" secondItem="RVA-E2-zO2" secondAttribute="trailing" id="iSm-uo-MKc"/>
+                <constraint firstItem="rtK-LA-zjY" firstAttribute="width" secondItem="DRm-m7-Kjk" secondAttribute="width" multiplier="0.45" id="vU7-wD-PHZ"/>
+                <constraint firstItem="RVA-E2-zO2" firstAttribute="leading" secondItem="DRm-m7-Kjk" secondAttribute="leading" constant="1" id="xvx-ZC-2QR"/>
+                <constraint firstItem="RVA-E2-zO2" firstAttribute="leading" secondItem="rTr-Pp-6eK" secondAttribute="leading" constant="1" id="z2T-65-3Pt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="rTr-Pp-6eK"/>
+            <connections>
+                <outlet property="filmColorView" destination="rtK-LA-zjY" id="uWQ-3B-l7U"/>
+                <outlet property="tableView" destination="RVA-E2-zO2" id="4IG-8n-pnV"/>
+            </connections>
+            <point key="canvasLocation" x="-82.400000000000006" y="259.97001499250376"/>
+        </view>
+    </objects>
+</document>
