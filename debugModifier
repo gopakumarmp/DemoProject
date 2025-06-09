@@ -1,6 +1,24 @@
+import SwiftUI
+
 struct LayoutDebugger: ViewModifier {
     func body(content: Content) -> some View {
         content
+            .background(GeometryReader { geo in
+                let frame = geo.frame(in: .global)
+                let screenWidth = UIScreen.main.bounds.width
+                let leadingPadding = frame.minX
+                let trailingPadding = screenWidth - frame.maxX
+
+                DispatchQueue.main.async {
+                    print("🔍 Layout Debugger")
+                    print("📐 Frame: \(frame)")
+                    print("📏 Screen Width: \(screenWidth)")
+                    print("⬅️ Leading Padding: \(leadingPadding)")
+                    print("➡️ Trailing Padding: \(trailingPadding)")
+                }
+
+                return Color.clear
+            })
             .overlay(
                 GeometryReader { geo in
                     let size = geo.size
@@ -9,8 +27,8 @@ struct LayoutDebugger: ViewModifier {
                     ZStack(alignment: .topLeading) {
                         Rectangle().stroke(Color.red, lineWidth: 1)
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("W: \(Int(size.width)), H: \(Int(size.height))")
-                            Text("X: \(Int(frame.minX)), Y: \(Int(frame.minY))")
+                            Text("W: \(Int(size.width)) H: \(Int(size.height))")
+                            Text("X: \(Int(frame.minX)) Y: \(Int(frame.minY))")
                         }
                         .font(.caption2)
                         .padding(4)
