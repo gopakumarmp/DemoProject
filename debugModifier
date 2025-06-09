@@ -1,0 +1,29 @@
+struct LayoutDebugger: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .overlay(
+                GeometryReader { geo in
+                    let size = geo.size
+                    let frame = geo.frame(in: .global)
+
+                    ZStack(alignment: .topLeading) {
+                        Rectangle().stroke(Color.red, lineWidth: 1)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("W: \(Int(size.width)), H: \(Int(size.height))")
+                            Text("X: \(Int(frame.minX)), Y: \(Int(frame.minY))")
+                        }
+                        .font(.caption2)
+                        .padding(4)
+                        .background(Color.black.opacity(0.5))
+                        .foregroundColor(.green)
+                    }
+                }
+            )
+    }
+}
+
+extension View {
+    func debugLayout() -> some View {
+        self.modifier(LayoutDebugger())
+    }
+}
